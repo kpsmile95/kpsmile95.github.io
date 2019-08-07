@@ -6,7 +6,7 @@
   <meta name="author" content="WangMian">
   
   
-  <title>ceshi | kpsmile95 | blog</title>
+  <title>markdown模板 | kpsmile95 | blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -174,11 +174,112 @@
     
   </div>
   <h1 class="passage-title">
-    ceshi
+    markdown模板
   </h1>
   
   <article class="passage-article">
-    <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3>
+    <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><em>强调文本</em> <em>强调文本</em><br><strong>加粗文本</strong> <strong>加粗文本</strong><br>==标记文本==<br><del>删除文本</del>  </p>
+<blockquote>
+<p>引用文本<br>H~2~O is是液体。<br>2^10^ 运算结果是 1024. </p>
+</blockquote>
+<p>&ensp; 半角的空格<br>&emsp; 全角的空格</p>
+<p>换行<br>方法1: 连续两个以上空格+回车<br>方法2：使用html语言换行标签：<br></p>
+<p>链接: <a href="https://mp.csdn.net" target="_blank" rel="noopener">link</a>.<br>图片: <img src="https://avatar.csdn.net/7/7/B/1_ralf_hx163com.jpg" alt="Alt"><br>带尺寸的图片: <img src="https://avatar.csdn.net/7/7/B/1_ralf_hx163com.jpg =30x30" alt="Alt"></p>
+<font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color="#0099ff" size="7" face="黑体">color=#0099ff size=72 face=”黑体”</font><br><font color="#00ffff" size="72">color=#00ffff</font><br><font color="red" size="72">color=red</font>
+
+<p>Size：规定文本的尺寸大小。可能的值：从 1 到 7 的数字。浏览器默认值是 3</p>
+<p>5、背景色<br>Markdown本身不支持背景色设置，需要采用内置html的方式实现：借助 table, tr, td 等表格标签的 bgcolor 属性来实现背景色的功能。举例如下：</p>
+<table><tr><td bgcolor="orange">背景色是：orange</td></tr></table>
+
+
+<p>6、分割线<br>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线</p>
+<p>7、代码块<br>代码块：空一行，再TAB键开头的段落，会被认为是代码块（效果如下）：</p>
+<p>struct {<br>    int year;<br>    int month;<br>    int day;<br>}bdate;<br>1<br>2<br>3<br>4<br>5<br>如果在一个行内需要引用代码，整行用反引号`引起来就好</p>
+<p>代码块与语法高亮：在需要高亮的代码块的前一行及后一行使用三个反引号“`”，同时第一行反引号后面表面代码块所使用的语言</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;bdate;</span><br></pre></td></tr></table></figure>
+<p>显示为<br>    struct {<br>        int year;<br>        int month;<br>        int day;<br>    }bdate;</p>
+<p>8、使用LaTex数学公式<br>行内公式：使用两个”$”符号引用公式: $公式$<br>行间公式：使用两对“$$”符号引用公式： $$公式$$ </p>
+<p>KaTeX数学公式<br>您可以使用渲染LaTeX数学表达式 KaTeX:</p>
+<p>Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall<br>n\in\mathbb N$ 是通过欧拉积分</p>
+<p>$$<br>\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.<br>$$</p>
+<p>9、生成一个适合你的列表</p>
+<ul>
+<li>项目<ul>
+<li>项目<ul>
+<li>项目</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>项目1</li>
+<li>项目2</li>
+<li>项目3</li>
+</ol>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 计划任务</li>
+<li style="list-style: none"><input type="checkbox" checked> 完成任务</li>
+</ul>
+<p>10、创建一个表格<br>一个简单的表格是这么创建的：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电脑</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>导管</td>
+<td>$1</td>
+</tr>
+</tbody>
+</table>
+<p>语法及设定内容居中、居左、居右<br>|、-、:之间的多余空格会被忽略，不影响布局。<br>默认标题栏居中对齐，内容居左对齐。<br>内容和|之间的多余空格会被忽略，每行第一个|和最后一个|可以省略，-的数量至少有一个。<br>使用:———:居中<br>使用:———-居左<br>使用———-:居右</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">第一列</th>
+<th style="text-align:right">第二列</th>
+<th style="text-align:left">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">第一列文本居中</td>
+<td style="text-align:right">第二列文本居右</td>
+<td style="text-align:left">第三列文本居左</td>
+</tr>
+</tbody>
+</table>
+<p>11、 创建一个自定义列表<br>Markdown<br>:  Text-to-HTML conversion tool</p>
+<p>Authors<br>:  John<br>:  Luke</p>
+<p>12、序列图和流程图<br>摘抄自CSDN的说明</p>
+<pre><code>1. CSDN旧版序列图
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+
+2. CSDN新版序列图
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+
+3. CSDN旧版流程图
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flowchat</span><br><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Opetation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+
+4. CSDN新版流程图
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flowchat</span><br><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Opetation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+</code></pre>
   </article>
   <aside class="table-content" id="site-toc">
   <div class="table-content-title">
