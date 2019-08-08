@@ -78,6 +78,8 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            kpsmile's blog
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -382,155 +369,10 @@ height:50vh;
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/passages/markdown模板/">
-            
-                <span>markdown模板</span>
-        </a>
-        <div class="abstract-content">
-            # 一级标题
-## 二级标题
-### 三级标题
-一级标题二级标题三级标题*强调文本* _强调文本_  
-**加粗文本** __加粗文本__  
-==标记文本==  
-~~删除文本~~  
-&gt; 引用文本  
-H~2~O is是液体。  
-2^10^ 运算结果是 1024. 
-&amp;ensp; 半角的空格
-&amp;emsp; 全角的空格
-强调文本 强调文本加粗文本 加粗文本==标记文本==删除文本  
-
-引用文本H~2~O is是液体。2^10^ 运算结果是 1024. 
-
-&ensp; 半角的空格&emsp; 全角的空格
-换行
-方法1: 连续两个以上空格+回车
-方法2：使用ht...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/tx.jpeg">
-    <div class="profile-name">kpsmile</div>
-    
-    <div class="profile-signature">
-        life is game
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:827486080@qq.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <a href="https://github.com/kpsmile95/" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/me.png">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="//www.baidu.com" target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="//www.google.com" target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
