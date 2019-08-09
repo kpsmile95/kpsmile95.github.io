@@ -351,7 +351,9 @@
                 <span>mybatis的SQL动态代理方式</span>
         </a>
         <div class="abstract-content">
-            
+            &emsp;&emsp;上文介绍了使用SqlSession的方式用mybatis对数据库进行操作。暴露了一些问题，在使用Mybatis基于SQLSession对象完成数据库操作时，参数的传递如果是多个参数需要我们封装成对象完成传递，但是就算只有两个我们也需要封装对象传递，就会比较麻烦，怎么办？
+解决方案&emsp;&emsp;使用Sql动态代理方式完成数据库操作。
+原理&emsp;&emsp;在没有使用mybatis时，我们会声明Dao层接口，然后自己创建并实现接口的实现类，在service层中调用接口的实现类完成数据库操作。&emsp;&emsp;而mybatis的sql动态代理方式，...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -359,6 +361,12 @@
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/08</span>
             </div>
             <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mybatis">mybatis</a>
+    
+</div>
             
         </div>
     </article>
@@ -642,9 +650,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="应用"><span class="iconfont-archer">&#xe60a;</span>应用</span>
     
-        <span class="sidebar-category-name" data-categories="语法"><span class="iconfont-archer">&#xe60a;</span>语法</span>
-    
         <span class="sidebar-category-name" data-categories="ssm"><span class="iconfont-archer">&#xe60a;</span>ssm</span>
+    
+        <span class="sidebar-category-name" data-categories="语法"><span class="iconfont-archer">&#xe60a;</span>语法</span>
     
         <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
