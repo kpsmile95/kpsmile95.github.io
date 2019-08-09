@@ -442,18 +442,7 @@ height:50vh;
                 <span>mybatis的sql语句的动态拼接</span>
         </a>
         <div class="abstract-content">
-            &emsp;&emsp;在实际开发中有很多时候，用户的请求不发送，请求数据就不确定，而Sql语句中的部分语句需要根据请求信息来确定如何书写，这样我们无法确定要执行的Sql语句。比如：带有筛选条件的查询，动态查询用户信息。
-解决方案&emsp;&emsp;在mapper.xml文件中使用标签来完成逻辑判断。
-原理&emsp;&emsp;Mybatis底层在解析Mapper.xml文件时，会将对应逻辑标签翻译成对象逻辑代码。
-内容
-if标签
-choose ，when,otherwise标签
-where标签
-set标签
-trim标签
-foreach标签
-bind标签
-sql，include标签...
+            注意：当使用if,choose单一条件进行判断时，如下面的代码片段1，是会报错的，需要将那个单一参数换成_parameter，如代码片段2！123456789101112131415161718&lt;!-- 代码片段1 --&gt;&lt;select id="selTeaByTid" resultType="teacher" &gt;       select * from teacher       &lt;where&gt;           &lt;if test="param1 != null and param1 != ''"&gt;               and ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
