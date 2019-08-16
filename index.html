@@ -452,14 +452,80 @@ timeline19-08-07 Demo0.java反转一个单链表。
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/passages/mybatis批量插入和更新/">
+            
+                <span>mybaits批量插入和更新</span>
+        </a>
+        <div class="abstract-content">
+            批量插入foreach标签配置文件1234567891011121314151617181920&lt;insert id="insertList" parameterType="java.util.List"&gt;        insert into t_enterprise_water_ele (&lt;include refid="Base_Column_List"/&gt;)        VALUES        &lt;foreach collection="list" item="item" index="index" separator=","&gt;       ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mybatis">mybatis</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/passages/Spring-AOP/">
+            
+                <span>Spring-AOP</span>
+        </a>
+        <div class="abstract-content">
+            提示：本文只含有使用方法，更多详细内容请访问《其他优秀博客》.
+
+AOP 即 Aspect Oriented Program 面向切面编程首先，在面向切面编程的思想里面，把功能分为核心业务功能，和周边功能。
+
+所谓的核心业务，比如登陆，增加数据，删除数据都叫核心业务
+所谓的周边功能，比如性能统计，日志，事务管理等等
+
+周边功能在 Spring 的面向切面编程AOP思想里，即被定义为切面在面向切面编程AOP的思想里面，核心业务功能和切面功能分别独立进行开发，然后把切面功能和核心业务功能 “编织” 在一起，这就叫AOP
+AOP 的目的AOP能够将那些与业务无关，却为业务模块所共同调用的逻辑或...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring">Spring</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/passages/Spring-IOC和DI/">
             
                 <span>Spring-IOC和DI</span>
         </a>
         <div class="abstract-content">
-            提示：本文只含有使用方法，更多详细内容请访问其他优秀博客.
+            提示：本文只含有使用方法，更多详细内容请访问《其他优秀博客》.
 
-IOC(控制反转)导入相关jar包配置applicationcontext.xml文件12345678910111213141516&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;beans xmlns="http://www.springframework.org/schema/beans"       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       xsi:schemaLocation="http://w...
+IOC(控制反转)导入相关jar包配置applicationcontext.xml文件12345678910111213141516&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;beans xmlns="http://www.springframework.org/schema/beans"       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       xsi:schemaLocation="http:/...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -646,84 +712,11 @@ mybatis.xml配置文件123456789101112131415161718192021222324252627282930313233
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/passages/log4j使用/">
-            
-                <span>log4j使用</span>
-        </a>
-        <div class="abstract-content">
-            配置文件123456789101112131415161718192021222324252627282930# 设置全局的日志打印级别以及打印位置#log4j.rootCategory=ERROR, CONSOLE,LOGFILE#设置指定的包|类|方法的日志打印级别，已经打印位置log4j.logger.org.wm.mapper=DEBUG, CONSOLE#设置控制台打印的级别|格式信息    #设置打印的类文件信息    log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender      #设置控制台日志打印的级别    #...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="log4j">log4j</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/passages/markdown模板/">
-            
-                <span>markdown模板</span>
-        </a>
-        <div class="abstract-content">
-            # 一级标题
-## 二级标题
-### 三级标题
-一级标题二级标题三级标题*强调文本* _强调文本_  
-**加粗文本** __加粗文本__  
-==标记文本==  
-~~删除文本~~  
-&gt; 引用文本  
-H~2~O is是液体。  
-2^10^ 运算结果是 1024. 
-&amp;ensp; 半角的空格
-&amp;emsp; 全角的空格
-强调文本 强调文本加粗文本 加粗文本==标记文本==删除文本  
-
-引用文本H~2~O is是液体。2^10^ 运算结果是 1024. 
-
-&ensp; 半角的空格&emsp; 全角的空格
-换行
-方法1: 连续两个以上空格+回车
-方法2：使用ht...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -1045,9 +1038,11 @@ H~2~O is是液体。
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -1060,6 +1055,16 @@ H~2~O is是液体。
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/passages/mybatis批量插入和更新/">mybaits批量插入和更新</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/passages/Spring-AOP/">Spring-AOP</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1093,12 +1098,12 @@ H~2~O is是液体。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis基于SqlSession的操作/">mybatis基于SqlSession的操作</a>
+            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis的SQL动态代理方式/">mybatis的SQL动态代理方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis的SQL动态代理方式/">mybatis的SQL动态代理方式</a>
+            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis基于SqlSession的操作/">mybatis基于SqlSession的操作</a>
         </li>
     
     
@@ -1116,19 +1121,19 @@ H~2~O is是液体。
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="log4j"><span class="iconfont-archer">&#xe606;</span>log4j</span>
-    
-        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
-    
         <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
     
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
-        <span class="sidebar-tag-name" data-tags="leetcode"><span class="iconfont-archer">&#xe606;</span>leetcode</span>
-    
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="算法图解"><span class="iconfont-archer">&#xe606;</span>算法图解</span>
+    
+        <span class="sidebar-tag-name" data-tags="leetcode"><span class="iconfont-archer">&#xe606;</span>leetcode</span>
+    
+        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
+    
+        <span class="sidebar-tag-name" data-tags="log4j"><span class="iconfont-archer">&#xe606;</span>log4j</span>
     
         <span class="sidebar-tag-name" data-tags="Spring"><span class="iconfont-archer">&#xe606;</span>Spring</span>
     
@@ -1165,19 +1170,19 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
-    
-        <span class="sidebar-category-name" data-categories="应用"><span class="iconfont-archer">&#xe60a;</span>应用</span>
-    
         <span class="sidebar-category-name" data-categories="ssm"><span class="iconfont-archer">&#xe60a;</span>ssm</span>
-    
-        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="读书笔记"><span class="iconfont-archer">&#xe60a;</span>读书笔记</span>
     
-        <span class="sidebar-category-name" data-categories="markdown"><span class="iconfont-archer">&#xe60a;</span>markdown</span>
+        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
+    
+        <span class="sidebar-category-name" data-categories="应用"><span class="iconfont-archer">&#xe60a;</span>应用</span>
     
         <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
+    
+        <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
+    
+        <span class="sidebar-category-name" data-categories="markdown"><span class="iconfont-archer">&#xe60a;</span>markdown</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
