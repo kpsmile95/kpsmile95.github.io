@@ -352,16 +352,8 @@
         </a>
         <div class="abstract-content">
             spring事务管理两种方式
-第一种 编程式事务管理（不用）
-第二种 声明式事务管理
-基于xml配置文件实现
-基于注解实现
-
-
-
-声明式事务管理（xml配置）配置文件方式使用aop思想配置
-（一）配置事务管理器1&lt;bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&gt;&lt;/bean&gt;
-（二）配置事务增强123456&lt;tx:advice id="interceptor" transaction-manager="t...
+第一种 编程式事务管理（不用）  管理使用TransactionTemplate或者直接使用底层的PlatformTransactionManager。对于编程式事务管理，spring推荐使用TransactionTemplate。
+第二种 声明式事务管理&emsp;&emsp;管理建立在AOP之上的。其本质是对方法前后进行拦截，然后在目标方法开始之前创建或者加入一个事务，在执行完目标方法之后根据执行情况提交或者回滚事务。声明式事务最大的优点就是不需要通过编程的方式管理事务，这样就不需要在业务逻辑代码中掺杂事务管理的代码，只需在配置文件中做相关的事务规则声明...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -951,6 +943,10 @@ timeline19-08-07 Demo0.java反转一个单链表。
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 13
@@ -1041,8 +1037,6 @@ timeline19-08-07 Demo0.java反转一个单链表。
     
         <span class="sidebar-tag-name" data-tags="log4j"><span class="iconfont-archer">&#xe606;</span>log4j</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring"><span class="iconfont-archer">&#xe606;</span>Spring</span>
-    
         <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
     
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
@@ -1052,6 +1046,8 @@ timeline19-08-07 Demo0.java反转一个单链表。
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="算法图解"><span class="iconfont-archer">&#xe606;</span>算法图解</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring"><span class="iconfont-archer">&#xe606;</span>Spring</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1092,13 +1088,13 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="ssm"><span class="iconfont-archer">&#xe60a;</span>ssm</span>
     
-        <span class="sidebar-category-name" data-categories="markdown"><span class="iconfont-archer">&#xe60a;</span>markdown</span>
-    
-        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
-    
         <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
+        <span class="sidebar-category-name" data-categories="markdown"><span class="iconfont-archer">&#xe60a;</span>markdown</span>
+    
         <span class="sidebar-category-name" data-categories="读书笔记"><span class="iconfont-archer">&#xe60a;</span>读书笔记</span>
+    
+        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
