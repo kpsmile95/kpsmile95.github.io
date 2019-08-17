@@ -412,7 +412,37 @@ height:50vh;
 </ol>
 <h1 id="spring事务特性"><a href="#spring事务特性" class="headerlink" title="spring事务特性"></a>spring事务特性</h1><p>&emsp;&emsp;spring所有的事务管理策略类都继承自org.springframework.transaction.PlatformTransactionManager接口</p>
 <p>其中TransactionDefinition接口定义以下特性：</p>
-<h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h2><p>&emsp;&emsp;隔离级别是指若干个并发的事务之间的隔离程度。TransactionDefinition 接口中定义了五个表示隔离级别的常量：<br>属性值 | 描述<br>—- | —-<br>TransactionDefinition.ISOLATION_DEFAULT | 这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是TransactionDefinition.ISOLATION_READ_COMMITTED。<br>TransactionDefinition.ISOLATION_READ_UNCOMMITTED | 该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读，不可重复读和幻读，因此很少使用该隔离级别。比如PostgreSQL实际上并没有此级别。<br>TransactionDefinition.ISOLATION_READ_COMMITTED | 该隔离级别表示一个事务只能读取另一个事务已经提交的数据。该级别可以防止脏读，这也是大多数情况下的推荐值。<br>TransactionDefinition.ISOLATION_REPEATABLE_READ | 该隔离级别表示一个事务在整个过程中可以多次重复执行某个查询，并且每次返回的记录都相同。该级别可以防止脏读和不可重复读。<br>TransactionDefinition.ISOLATION_SERIALIZABLE | 所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</p>
+<h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h2><p>&emsp;&emsp;隔离级别是指若干个并发的事务之间的隔离程度。TransactionDefinition 接口中定义了五个表示隔离级别的常量：</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TransactionDefinition.ISOLATION_DEFAULT</td>
+<td>这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是TransactionDefinition.ISOLATION_READ_COMMITTED。</td>
+</tr>
+<tr>
+<td>TransactionDefinition.ISOLATION_READ_UNCOMMITTED</td>
+<td>该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读，不可重复读和幻读，因此很少使用该隔离级别。比如PostgreSQL实际上并没有此级别。</td>
+</tr>
+<tr>
+<td>TransactionDefinition.ISOLATION_READ_COMMITTED</td>
+<td>该隔离级别表示一个事务只能读取另一个事务已经提交的数据。该级别可以防止脏读，这也是大多数情况下的推荐值。</td>
+</tr>
+<tr>
+<td>TransactionDefinition.ISOLATION_REPEATABLE_READ</td>
+<td>该隔离级别表示一个事务在整个过程中可以多次重复执行某个查询，并且每次返回的记录都相同。该级别可以防止脏读和不可重复读。</td>
+</tr>
+<tr>
+<td>TransactionDefinition.ISOLATION_SERIALIZABLE</td>
+<td>所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="事务传播行为"><a href="#事务传播行为" class="headerlink" title="事务传播行为"></a>事务传播行为</h2><p>&emsp;&emsp;所谓事务的传播行为是指，如果在开始当前事务之前，一个事务上下文已经存在，此时有若干选项可以指定一个事务性方法的执行行为。在TransactionDefinition定义中包括了如下几个表示传播行为的常量：</p>
 <table>
 <thead>
@@ -452,8 +482,8 @@ height:50vh;
 </tr>
 </tbody>
 </table>
-<h2 id="事务超时"><a href="#事务超时" class="headerlink" title="事务超时"></a>事务超时</h2><pre><code>所谓事务超时，就是指一个事务所允许执行的最长时间，如果超过该时间限制但事务还没有完成，则自动回滚事务。在 TransactionDefinition 中以 int 的值来表示超时时间，其单位是秒。默认设置为底层事务系统的超时值，如果底层数据库事务系统没有设置超时值，那么就是none，没有超时限制。
-</code></pre><h2 id="事务只读属性"><a href="#事务只读属性" class="headerlink" title="事务只读属性"></a>事务只读属性</h2><p>&emsp;&emsp;只读事务用于客户代码只读但不修改数据的情形，只读事务用于特定情景下的优化，比如使用Hibernate的时候。默认为读写事务。<br>&emsp;&emsp;“只读事务”并不是一个强制选项，它只是一个“暗示”，提示数据库驱动程序和数据库系统，这个事务并不包含更改数据的操作，那么JDBC驱动程序和数据库就有可能根据这种情况对该事务进行一些特定的优化，比方说不安排相应的数据库锁，以减轻事务对数据库的压力，毕竟事务也是要消耗数据库的资源的。 但是你非要在“只读事务”里面修改数据，也并非不可以，只不过对于数据一致性的保护不像“读写事务”那样保险而已。 因此，“只读事务”仅仅是一个性能优化的推荐配置而已，并非强制你要这样做不可</p>
+<h2 id="事务超时"><a href="#事务超时" class="headerlink" title="事务超时"></a>事务超时</h2><p>&emsp;&emsp;所谓事务超时，就是指一个事务所允许执行的最长时间，如果超过该时间限制但事务还没有完成，则自动回滚事务。在 TransactionDefinition 中以 int 的值来表示超时时间，其单位是秒。默认设置为底层事务系统的超时值，如果底层数据库事务系统没有设置超时值，那么就是none，没有超时限制。</p>
+<h2 id="事务只读属性"><a href="#事务只读属性" class="headerlink" title="事务只读属性"></a>事务只读属性</h2><p>&emsp;&emsp;只读事务用于客户代码只读但不修改数据的情形，只读事务用于特定情景下的优化，比如使用Hibernate的时候。默认为读写事务。<br>&emsp;&emsp;“只读事务”并不是一个强制选项，它只是一个“暗示”，提示数据库驱动程序和数据库系统，这个事务并不包含更改数据的操作，那么JDBC驱动程序和数据库就有可能根据这种情况对该事务进行一些特定的优化，比方说不安排相应的数据库锁，以减轻事务对数据库的压力，毕竟事务也是要消耗数据库的资源的。 但是你非要在“只读事务”里面修改数据，也并非不可以，只不过对于数据一致性的保护不像“读写事务”那样保险而已。 因此，“只读事务”仅仅是一个性能优化的推荐配置而已，并非强制你要这样做不可</p>
 <h2 id="spring事务回滚规则"><a href="#spring事务回滚规则" class="headerlink" title="spring事务回滚规则"></a>spring事务回滚规则</h2><p>&emsp;&emsp;指示spring事务管理器回滚一个事务的推荐方法是在当前事务的上下文内抛出异常。spring事务管理器会捕捉任何未处理的异常，然后依据规则决定是否回滚抛出异常的事务。<br>&emsp;&emsp;默认配置下，spring只有在抛出的异常为运行时unchecked异常时才回滚该事务，也就是抛出的异常为RuntimeException的子类(Errors也会导致事务回滚)，而抛出checked异常则不会导致事务回滚。可以明确的配置在抛出那些异常时回滚事务，包括checked异常。也可以明确定义那些异常抛出时不回滚事务。还可以编程性的通过setRollbackOnly()方法来指示一个事务必须回滚，在调用完setRollbackOnly()后你所能执行的唯一操作就是回滚。</p>
 <h1 id="声明式事务管理（xml配置）"><a href="#声明式事务管理（xml配置）" class="headerlink" title="声明式事务管理（xml配置）"></a>声明式事务管理（xml配置）</h1><p>&emsp;&emsp;配置文件方式使用aop思想配置</p>
 <p><font color="red" size="7">注意：若是在加上事务的方法里面对异常进行try,catch了，则事务不会回滚！需要配置上rollbackfor属性，属性的值为要捕获的Expection类型的class。如“rollbackfor=’Exception.class’”</font></p>
@@ -546,7 +576,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">kpsmile95</a>
             </p><p>原文链接：<a href="http://yoursite.com/passages/Spring-tx事务/">http://yoursite.com/passages/Spring-tx事务/</a>
             </p><p>发表日期：<a href="http://yoursite.com/passages/Spring-tx事务/">August 16th 2019, 7:34:26 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/passages/Spring-tx事务/">August 17th 2019, 2:58:24 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/passages/Spring-tx事务/">August 17th 2019, 3:51:48 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -843,16 +873,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 13
@@ -916,12 +936,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis的SQL动态代理方式/">mybatis的SQL动态代理方式</a>
+            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis基于SqlSession的操作/">mybatis基于SqlSession的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis基于SqlSession的操作/">mybatis基于SqlSession的操作</a>
+            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/passages/mybatis的SQL动态代理方式/">mybatis的SQL动态代理方式</a>
         </li>
     
     
@@ -947,11 +967,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
-        <span class="sidebar-tag-name" data-tags="leetcode"><span class="iconfont-archer">&#xe606;</span>leetcode</span>
-    
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="算法图解"><span class="iconfont-archer">&#xe606;</span>算法图解</span>
+    
+        <span class="sidebar-tag-name" data-tags="leetcode"><span class="iconfont-archer">&#xe606;</span>leetcode</span>
     
         <span class="sidebar-tag-name" data-tags="Spring"><span class="iconfont-archer">&#xe606;</span>Spring</span>
     
@@ -994,11 +1014,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="ssm"><span class="iconfont-archer">&#xe60a;</span>ssm</span>
     
-        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
-    
         <span class="sidebar-category-name" data-categories="markdown"><span class="iconfont-archer">&#xe60a;</span>markdown</span>
     
         <span class="sidebar-category-name" data-categories="读书笔记"><span class="iconfont-archer">&#xe60a;</span>读书笔记</span>
+    
+        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
